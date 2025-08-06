@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
+
+.menu{
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    background: #2C2E3A;
+    border-radius: 40px;
+    width: 80%;
+    margin:0 auto;
+    padding: 5px 0;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.4s;
+}
+li a:hover,
+li a:focus{
+    color: #fff;
+}
+
+
+li a::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: rgb(0,183,255);
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+    opacity: 0;
+    transition: all 0.2s;
+    pointer-events: none;
+}
+li a:hover::after,
+li a:focus::after{
+    opacity: 1;
+}
+
+body{
+    background: #141619;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    gap: 20px;
+}
+
+
+h1{
+    margin: 0 0 20px 0;
+    color: white;
+}
+
+.btn{
+    margin: 0;
+}
+
+.btn button {
+    background: rgb(0,183,255);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /
+}
+
+.btn button:hover {
+    background: rgb(0,90,255);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -19,11 +19,18 @@
     </nav>
 </header>
 
-    <main>
-        <h1>Leave your message and have fun! </h1>
-        <div class="btn">
-            <a href="create.php"><button>Write a message</button> </a>
-        </div>
-    </main>
+<main>
+    <div class="form">
+        <h2>Message Form</h2>
+        <form action="/action_page.php" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name"
+            placeholder="Your name..">
+            <label for="Message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message"></textarea>
+            <button type="submit">Submit Message</button>
+        </form>
+    </div>
+</main>
 </body>
 </html>

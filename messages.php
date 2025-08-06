@@ -19,11 +19,11 @@
     </nav>
 </header>
 
-    <main>
-        <h1>Leave your message and have fun! </h1>
-        <div class="btn">
-            <a href="create.php"><button>Write a message</button> </a>
-        </div>
-    </main>
+<main>
+    <h1>Leave your message and have fun! </h1>
+    <div class="btn">
+        <a href="create.php"><button>Write a message</button> </a>
+    </div>
+</main>
 </body>
 </html>
