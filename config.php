@@ -10,11 +10,8 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
 
-
-
 try{
     $pdo = new PDO($dsn, $username, $password, $options);
-    echo "Connected successfully";
 }catch (PDOException $e){
     echo  "Connection failed: " . $e->getMessage();
 }

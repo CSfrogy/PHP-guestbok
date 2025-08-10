@@ -22,13 +22,14 @@
 <main>
     <div class="form">
         <h2>Message Form</h2>
-        <form action="/action_page.php" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name"
+        <form action="/form-handler.php" method="POST">
+            <label for="user_name">Name</label>
+                <input type="text" id="user_name" name="name"
             placeholder="Your name..">
-            <label for="Message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message"></textarea>
-            <button type="submit">Submit Message</button>
+            <p class="error"></p>
+            <label for="message_area">Message</label>
+                <textarea name="message" id="message_area" cols="30" rows="10" placeholder="Write your message"></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </div>
 </main>
