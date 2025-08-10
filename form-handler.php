@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt = $pdo->prepare("INSERT INTO messages (name, message) VALUES (:name, :message)");
             $stmt->execute([":name" => $name, ":message" => $message]);
 
-            header("Location: create.php?success=1");
+            header("Location: messages.php");
             exit();
 
 

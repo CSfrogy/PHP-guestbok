@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header{
@@ -10,34 +11,46 @@ header{
     padding: 10px;
 }
 
-.menu{
-    font-size: large;
-    display: flex;
-    justify-content: center;
-    background: #2C2E3A;
+html,body{
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #141619;
+}
+
+.menu {
+    background: linear-gradient(135deg, #3a3f5a 0%, #2C2E3A 100%);
     border-radius: 40px;
     width: 80%;
-    margin:0 auto;
-    padding: 5px 0;
+    margin: 20px auto;
+    padding: 8px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 ul{
     display: flex;
-    justify-content: space-around;
-    width: 60%;
+    justify-content: space-evenly;
+    width: 100%;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 li {
     list-style: none;
-    padding: 10px;
+    padding: 10px 15px;
+    position: relative;
 }
 
 li a{
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    position: relative;
-    transition: all 0.4s;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 5px 0;
 }
 li a:hover,
 li a:focus{
@@ -52,7 +65,7 @@ li a::after{
     background: rgb(0,183,255);
     position: absolute;
     left: 0;
-    bottom: -14px;
+    bottom: -10px;
     opacity: 0;
     transition: all 0.2s;
     pointer-events: none;
@@ -62,19 +75,22 @@ li a:focus::after{
     opacity: 1;
 }
 
-body{
-    background: #141619;
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 20px 0;
 }
-main{
+
+.main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
     align-items: center;
-    overflow: hidden;
-    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
-
 
 h1{
     margin: 0 0 20px 0;
@@ -86,6 +102,7 @@ h1{
 }
 
 .btn button {
+    font-family: 'Montserrat', sans-serif;
     background: rgb(0,183,255);
     color: white;
     border: none;
@@ -104,6 +121,91 @@ h1{
 }
 
 .btn button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.messages-page main {
+    height: auto;
+    min-height: calc(100vh - 100px);
+    padding: 0 20px;
+    justify-content: flex-start;
+}
+.messages-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.message {
+    background: #2C2E3A;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.messages-container h1{
+    text-align: center;
+}
+.message:hover {
+    transform: translateY(-3px);
+}
+
+
+.message-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: rgb(0,183,255);
+}
+.message-text {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+.message-date {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: right;
+}
+
+.no-messages {
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+}
+
+/* Button styles for messages page */
+.messages-page .btn {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.messages-page button {
+    background: rgb(0,183,255);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.messages-page button:hover {
+    background: rgb(0,90,255);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.messages-page button:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
