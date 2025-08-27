@@ -26,6 +26,15 @@
                 <a href="create.php"><button>Write a message</button> </a>
             </div>
         </div>
+        <div class="contact_form">
+            <h1>Contact Me</h1>
+            <form action="post">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email">
+                <input type="textarea" name="message" placeholder="Your Message">
+                <button type="submit"class="button_contact_form">Send</button>
+            </form>
+        </div>
     </main>
 </body>
 </html>
