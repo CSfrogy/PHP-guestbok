@@ -1,5 +1,6 @@
     <?php
-    require "fetch.php";
+    require_once "fetch.php";
+    require_once "pagination.php";
     ?>
     <!doctype html>
     <html lang="en">
@@ -47,6 +48,12 @@
         <?php endforeach; ?>
         <?php endif; ?>
         </div>
+        <div class="pagination">
+            <?php if($total_pages > 1): ?>
+                <?php for($i = 1; $i <= $total_pages; $i++): ?>
+                    <a class="<?= ($i === $page) ? 'active' : '' ?>" href="?page=<?= $i ?>"><?= $i ?></a>
+                <?php endfor; ?>
+            <?php endif; ?>
     </main>
     </body>
     </html>
