@@ -1,23 +1,39 @@
-<?php 
-// You do not need to include contactform.php in index.php using require_once if the contact form submission is handled within the same index.php file or if you're using a direct form submission to contactform.php.  If your form in index.php submits to contactform.php, then contactform.php should handle the processing logic directly.  If you intend to process the form within index.php, then you would include the contactform.php logic.  However, based on the provided code, it seems like contactform.php is intended to be the direct handler.
+<?php
+$name    = $_POST['name'];
+$email   = $_POST['email'];
+$message = $_POST['message'];
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+require "vendor/autoload.php";
+try {
+    $mail = new PHPMailer(true);
 
-    $mailTo = "bulattarbaev4@gmail.com";
-    $headers = "From: ".$email;
-    $txt = "You have received an e-mail from ".$name.".\n\n".$message;
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+    $mail->Host     = 'smtp.gmail.com';
 
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $message = filter_var($message, FILTER_SANITIZE_STRING);
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        mail($mailTo,$txt,$headers);
-        header("Location: index.php?mailsend");
-    } else {
-        echo "Invalid email format";
-    }
+    $mail->Username = "lonelyguse@gmail.com";
+    $mail->Password = "ktyi pyja pnix tlcp";
+    $mail->setFrom($email, $name);
+    $mail->addAddress("lonelyguse@gmail.com","Website Contact Form");
+    $mail->addReplyTo($email, $name);
+    $mail->Subject = "New Contact Form Message from $name";
+    $mail->Body = "You have received a new message from your website contact form.\n\n".
+                  "Name: $name\n".
+                  "Email: $email\n".
+                  "Message:\n$message";
+
+    $mail->Body .= "\n\n---\nThis message was sent from your website contact form. " .
+                   "Please reply to: $email";
+
+    $mail->send();
+    header("Location: index.php?message=success#contact_form");
+    exit();
+
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

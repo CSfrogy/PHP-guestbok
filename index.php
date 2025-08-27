@@ -28,7 +28,7 @@
         </div>
         <div class="contact_form">
             <h1>Contact Me</h1>
-            <form action="post">
+            <form action="contactform.php" method="post">
                 <input type="text" name="name" placeholder="Your Name">
                 <input type="email" name="email" placeholder="Your Email">
                 <input type="textarea" name="message" placeholder="Your Message">
